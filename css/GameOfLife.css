@@ -1,0 +1,19 @@
+.display{
+	width: 900px;
+	height: 500px;
+	margin-left: 70px;
+	margin-top: 50px;
+}
+
+.operation{
+	width: 200px;
+	height: 600px;
+	float: right;
+	margin-left: 650px;
+	border: black;
+}
+
+body{
+	width: 100%;
+	overflow: hidden;
+}
