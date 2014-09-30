@@ -104,13 +104,13 @@ function Loop(){
 /*****************绘制函数*********************/
 function DrawCell(i, j){
 	if (arr[i][j].now == 1){
-		ctx.fillStyle = "yellow";
+		ctx.fillStyle = "#2ce4ab";
 	}
 	else{
 		ctx.fillStyle = 'rgb(150, 150, 150)';
 	} 
 	//ctx.shadowColor = 'rgb(200, 200, 200)';
-	ctx.fillRect(i*w, j*h, w-2, h-2);
+	ctx.fillRect(i*w, j*h, w-1, h-1);
 }
 
 

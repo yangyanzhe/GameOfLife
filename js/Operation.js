@@ -120,12 +120,12 @@ function ChangeStage(x, y){
 	if(arr[i][j].now){
 		arr[i][j].now = 0;
 		ctx.fillStyle = 'rgb(150, 150, 150)';
-		ctx.fillRect(i*w, j*h, w-2, h-2);
+		ctx.fillRect(i*w, j*h, w-1, h-1);
 	}
 	else{
 		arr[i][j].now = 1;
-		ctx.fillStyle = 'yellow';
-		ctx.fillRect(i*w, j*h, w-2, h-2);
+		ctx.fillStyle = '#2ce4ab';
+		ctx.fillRect(i*w, j*h, w-1, h-1);
 	}
 }
 
@@ -139,8 +139,8 @@ function ChangeStageAlive(x, y){
 	var j = parseInt(y / h);
 	if(arr[i][j].now == 0){
 		arr[i][j].now = 1;
-		ctx.fillStyle = 'yellow';
-		ctx.fillRect(i*w, j*h, w-2, h-2);
+		ctx.fillStyle = '#2ce4ab';
+		ctx.fillRect(i*w, j*h, w-1, h-1);
 	}
 }
 
@@ -149,7 +149,7 @@ function ResetCells(){
 	for(var i = 0; i<row; i++){
 		for(var j = 0; j<column; j++){
 			arr[i][j].now = 0;
-			ctx.fillRect(i*w, j*h, w-2, h-2);
+			ctx.fillRect(i*w, j*h, w-1, h-1);
 		}
 	}
 	if(!pausable){
@@ -160,15 +160,10 @@ function ResetCells(){
 
 /*****************绘制说明*********************/
 function DrawInstruction(){
-	//draw title
-	ctx.font = "35px 微软雅黑";
-	
 	var c = $("#myCanvas")[0].width;
-	var gradient=ctx.createLinearGradient(600,30, 650, 80);
-	gradient.addColorStop("1","rgb(50,50, 150)");
-	gradient.addColorStop("0.5","yellow");
-	gradient.addColorStop("0","rgb(150,150, 150)");
-	ctx.fillStyle=gradient;
+	//draw title
+	ctx.font = "35px Broadway";
+	ctx.fillStyle = "#2ce4ab";
 	ctx.fillText("Game of Life", 600, 30);
 
 	//draw instruction
