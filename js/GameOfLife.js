@@ -61,7 +61,7 @@ function CountAliveNum(i, j){
 }
 
 //判断下一时刻状态
-function ChangeState(i, j){
+function JudgeState(i, j){
 	var aliveNum = CountAliveNum(i, j);
 	switch(aliveNum){
 		case 3: arr[i][j].future = 1;
@@ -76,7 +76,7 @@ function Loop(){
 	//遍历更改判断下一时刻状态
 	for(var i = 0; i < row; ++i){
 		for(var j = 0; j < column; ++j){
-			ChangeState(i, j);
+			JudgeState(i, j);
 		}
 	}
 
@@ -109,7 +109,7 @@ function DrawCell(i, j){
 	else{
 		ctx.fillStyle = 'rgb(150, 150, 150)';
 	} 
-	ctx.shadowColor = 'rgb(200, 200, 200)';
+	//ctx.shadowColor = 'rgb(200, 200, 200)';
 	ctx.fillRect(i*w, j*h, w-2, h-2);
 }
 
